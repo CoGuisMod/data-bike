@@ -1,12 +1,9 @@
 import { NextFunction, Request, RequestHandler, Response } from "express";
-import bcrypt from "bcrypt";
-
-import createHttpError from "http-errors";
 
 /* -------------------------------------------------- Store controllers -------------------------------------------------- */
 
 /* Creates a store */
-export const createStore: RequestHandler = async (
+const createStore: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -20,7 +17,7 @@ export const createStore: RequestHandler = async (
 };
 
 /* Reads a store */
-export const readStore: RequestHandler = async (
+const readStore: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -34,7 +31,7 @@ export const readStore: RequestHandler = async (
 };
 
 /* Updates a store */
-export const updateStore: RequestHandler = async (
+const updateStore: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -48,7 +45,7 @@ export const updateStore: RequestHandler = async (
 };
 
 /* Deletes a store */
-export const deleteStore: RequestHandler = async (
+const deleteStore: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -62,7 +59,7 @@ export const deleteStore: RequestHandler = async (
 };
 
 /* Reads all stores */
-export const readStores: RequestHandler = async (
+const readStores: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -74,3 +71,5 @@ export const readStores: RequestHandler = async (
     next(error);
   }
 };
+
+export default { createStore, readStore, updateStore, deleteStore, readStores };

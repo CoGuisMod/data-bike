@@ -8,13 +8,13 @@ import {
   deleteUserSchema,
   readUserSchema,
   updateUserSchema,
-} from "../../validators/management.validator";
+} from "../../validators/management/user.validator";
 import UserModel from "../../models/user.model";
 
 /* -------------------------------------------------- User controllers -------------------------------------------------- */
 
 /* Creates an user */
-export const createUser: RequestHandler = async (
+const createUser: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -54,7 +54,7 @@ export const createUser: RequestHandler = async (
 };
 
 /* Reads an user */
-export const readUser: RequestHandler = async (
+const readUser: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -79,7 +79,7 @@ export const readUser: RequestHandler = async (
 };
 
 /* Updates an user */
-export const updateUser: RequestHandler = async (
+const updateUser: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -137,7 +137,7 @@ export const updateUser: RequestHandler = async (
 };
 
 /* Deletes an user */
-export const deleteUser: RequestHandler = async (
+const deleteUser: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -162,7 +162,7 @@ export const deleteUser: RequestHandler = async (
 };
 
 /* Reads all users */
-export const readUsers: RequestHandler = async (
+const readUsers: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -177,3 +177,5 @@ export const readUsers: RequestHandler = async (
     next(error);
   }
 };
+
+export default { createUser, readUser, updateUser, deleteUser, readUsers };

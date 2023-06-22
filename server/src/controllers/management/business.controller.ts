@@ -1,12 +1,9 @@
 import { NextFunction, Request, RequestHandler, Response } from "express";
-import bcrypt from "bcrypt";
-
-import createHttpError from "http-errors";
 
 /* -------------------------------------------------- Business controllers -------------------------------------------------- */
 
 /* Creates a business */
-export const createBusiness: RequestHandler = async (
+const createBusiness: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -20,7 +17,7 @@ export const createBusiness: RequestHandler = async (
 };
 
 /* Reads a business */
-export const readBusiness: RequestHandler = async (
+const readBusiness: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -34,7 +31,7 @@ export const readBusiness: RequestHandler = async (
 };
 
 /* Updates a business */
-export const updateBusiness: RequestHandler = async (
+const updateBusiness: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -48,7 +45,7 @@ export const updateBusiness: RequestHandler = async (
 };
 
 /* Deletes a business */
-export const deleteBusiness: RequestHandler = async (
+const deleteBusiness: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -62,7 +59,7 @@ export const deleteBusiness: RequestHandler = async (
 };
 
 /* Reads all business */
-export const readBusinesses: RequestHandler = async (
+const readBusinesses: RequestHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -73,4 +70,12 @@ export const readBusinesses: RequestHandler = async (
   } catch (error) {
     next(error);
   }
+};
+
+export default {
+  createBusiness,
+  readBusiness,
+  updateBusiness,
+  deleteBusiness,
+  readBusinesses,
 };

@@ -27,9 +27,12 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    store: {
+    business: {
       type: String,
       required: true,
+    },
+    store: {
+      type: String,
     },
     role: {
       type: String,
